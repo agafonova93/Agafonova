@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "Amatic_SC";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/Amatic_SC/AmaticSC-Regular.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf) format(" ttf");
+
+    }
+
+    :root {
+        font-size: 62, 5%;
+        color: rgba(red, green, blue, alpha);
+        --color-text-primary: #4A4A4A;
+        --color-text-secondary: #4A4A4A;
+        --color-bg-light: #F5F5F5;
+        --color-bg-section: #536614;
+        --color-bg-section2: #97C20B;
+        --color-grad-primary: #536614;
+        --color-grad-secondary: #97C20B;
+
+        --font-family-base: "Amatic_SC", "Arial", sans-serif;
+        --font-weight-regular: 400;
+        --font-weight-medium: 500;
+        --font-weight-light: 300;
+    }
+
+    h1 {
+        color: var(--color-text-primary);
+
+    }
+
+    body {
+background-color: var(--color-bg-light);
+color: var(--color-text-primary);
+font-family: var(--font-family-base);
+
+
+    }
