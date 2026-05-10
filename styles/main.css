@@ -63,6 +63,25 @@ header {
     padding: 10px 0;
     }
 
+/*Первоначально меню скрыто*/    
+.menu {
+    display: none;
+    position: absolute;
+}
+.burger {
+    cursor: pointer;
+    display: inline-block;
+    width: 32px;
+    height: 33px;
+    padding: 4px;
+}
+#toogle {
+    display: none;
+}
+
+input[type=checkbox]:checked ~ .menu {
+    display: inline-block;
+}
     h1,
     h2 {
         font-weight: var(--font-weight-regular);
