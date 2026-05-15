@@ -43,13 +43,18 @@ html {
     }
 
     body {
+    /*Данные свойства необходимы для прибивания футера к низу страницы*/
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        /*Свойства внешнего вида*/
         background-color: var(--color-bg-light);
         color: var(--color-text-primary);
         font-family: var(--font-family-base);
         font-size: 1.6rem;
-        line-height: 4.0rem font-weight: var(--font-weight-regular);
+        line-height: 4.0rem;
+        font-weight: var(--font-weight-regular);
         letter-spacing: 0rem;
-
     }
 
 /*Свойста обертки для ограничения по ширине содержимого сайта и для его центрирования*/
@@ -61,27 +66,63 @@ html {
   
 header {
     padding: 10px 0;
+     border-bottom: 0,4rem solid;
+    position: sticky;
+    top: 0;
+    z-index: 50;
     }
 
-/*Первоначально меню скрыто*/    
-.menu {
-    display: none;
-    position: absolute;
-}
-.burger {
-    cursor: pointer;
-    display: inline-block;
-    width: 32px;
-    height: 33px;
-    padding: 4px;
-}
-#toogle {
-    display: none;
-}
-
-input[type=checkbox]:checked ~ .menu {
-    display: inline-block;
-}
+/* Стили для меню */
+        .menu {
+            display: none;
+            position: absolute;
+            width: 85vw;
+            top: 4rem;
+        }
+        
+        .hamburger {
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px 15px;
+            position: relative;
+            user-select: none;
+            background-color: #ccc;
+            border-radius: 5px;
+        }
+        
+        
+        /* Показываем меню при нажатии на гамбургер */
+        input[type=checkbox]:checked ~ .menu {
+            display: inline-block;
+        }
+        
+        /* Скрытие чекбокса */
+        #toggle {
+            display: none;
+        }
+        
+        /* Стили для пунктов меню */
+        .menu {
+            background-color: #f4f4f4;
+            list-style-type: none;
+            margin-top: 50px;
+            padding: 0;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            border-top: 1px solid #ccc;
+        }
+        
+        .menu li {
+            margin: 0;
+            padding: 12px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .menu li a {
+            color: #333;
+            text-decoration: none;
+        }
     h1,
     h2 {
         font-weight: var(--font-weight-regular);
@@ -91,14 +132,14 @@ input[type=checkbox]:checked ~ .menu {
         font-size: 3.6rem;
         line-height: 4.0rem;
         letter-spacing: 0rem;
-        margin: 40px 0;  
+        padding: 40px 0;  
     }
 
     h2 {
         font-size: 1.6rem;
         line-height: 2.4rem;
         letter-spacing: 0rem;
-        margin: 24px 0;
+        padding: 24px 0;
     }
 
     a {
@@ -116,6 +157,15 @@ input[type=checkbox]:checked ~ .menu {
          border: 2px solid #536614; /* Толщина, стиль, цвет */
         border-radius: 50px; /*Скругление всех углов*/
         text-align: center;
-        margin: 25px;
+        margin: 20px;
         }
-        
+   footer {
+    margin-top: auto;
+       }
+        .footer-navigation ul{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style-type: none;
+            flex-wrap: wrap;
+            }
