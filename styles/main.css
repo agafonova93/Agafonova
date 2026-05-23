@@ -78,6 +78,7 @@ header {
             position: absolute;
             width: 85vw;
             top: 4rem;
+            z-index: 100;
         }
         
         .hamburger {
@@ -164,8 +165,7 @@ header {
        }
         .footer-navigation ul{
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             gap: 20px;
             list-style-type: none;
-            flex-wrap: wrap;
             }
