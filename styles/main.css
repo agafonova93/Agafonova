@@ -11,161 +11,311 @@
     font-weight: 300;
     src: url("../fonts/Roboto/static/Roboto-Regular.ttf") format("TrueType");
 
-    }
+}
 
-    :root {
-        font-size: 62,5%;
-        --color-text-primary: #4A4A4A;
-        --color-text-secondary: #4A4A4A;
-        --color-bg-light: #F5F5F5;
-        --color-bg-section: #536614;
-        --color-bg-section2: #97C20B;
-        --color-grad-primary: #536614;
-        --color-grad-secondary: #97C20B;
+:root {
+    font-size: 62.5%;
+    --color-text-primary: #4A4A4A;
+    --color-text-secondary: #4A4A4A;
+    --color-bg-light: #F5F5F5;
+    --color-bg-section: #536614;
+    --color-bg-section2: #97C20B;
+    --color-grad-primary: #536614;
+    --color-grad-secondary: #97C20B;
 
-        --font-family-base: "Amatic_SC", "Arial", sans-serif;
-        --font-weight-regular: 400;
-        --font-weight-medium: 500;
-        --font-weight-light: 300;
-    }
+    --font-family-base: "Amatic_SC", "Arial", sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-light: 300;
+}
+
 /*Способ расчета размеров элементов, который позволяет учитывать внутренние отступы и границы*/
 html {
     box-sizing: border-box;
-    }
+}
+
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
 
-    h1 {
-        color: var(--color-text-primary);
-    }
-
-    body {
+body {
     /*Данные свойства необходимы для прибивания футера к низу страницы*/
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        /*Свойства внешнего вида*/
-        background-color: var(--color-bg-light);
-        color: var(--color-text-primary);
-        font-family: var(--font-family-base);
-        font-size: 1.6rem;
-        line-height: 4.0rem;
-        font-weight: var(--font-weight-regular);
-        letter-spacing: 0rem;
-    }
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /*Свойства внешнего вида*/
+    background-color: var(--color-bg-light);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-base);
+    font-size: 1.6rem;
+    line-height: 4.0rem;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: 0rem;
+    margin: 0;
+}
 
 /*Свойста обертки для ограничения по ширине содержимого сайта и для его центрирования*/
 .wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
     padding: 0 20px;
-    max-width: 1180px;
-    margin: 8px;
 }
-  
+
 header {
     padding: 10px 0;
-     border-bottom: 0,4rem solid;
     position: sticky;
     top: 0;
     z-index: 50;
-    }
+}
+
+.wrapper-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 /* Стили для меню */
-        .menu {
-            display: none;
-            position: absolute;
-            width: 85vw;
-            top: 4rem;
-            z-index: 100;
-        }
-        
-        .hamburger {
-            cursor: pointer;
-            display: inline-block;
-            padding: 10px 15px;
-            position: relative;
-            user-select: none;
-            background-color: #ccc;
-            border-radius: 5px;
-        }
-        
-        
-        /* Показываем меню при нажатии на гамбургер */
-        input[type=checkbox]:checked ~ .menu {
-            display: inline-block;
-        }
-        
-        /* Скрытие чекбокса */
-        #toggle {
-            display: none;
-        }
-        
-        /* Стили для пунктов меню */
-        .menu {
-            background-color: #f4f4f4;
-            list-style-type: none;
-            margin-top: 50px;
-            padding: 0;
-            position: absolute;
-            text-align: center;
-            width: 100%;
-            border-top: 1px solid #ccc;
-        }
-        
-        .menu li {
-            margin: 0;
-            padding: 12px 0;
-            border-bottom: 1px solid #ccc;
-        }
-        
-        .menu li a {
-            color: #333;
-            text-decoration: none;
-        }
-    h1,
-    h2 {
-        font-weight: var(--font-weight-regular);
-    }
+.menu {
+    display: none;
+    position: absolute;
+    width: 85vw;
+    top: 4rem;
+    right: 20px;
+}
 
-    h1 {
-        font-size: 3.6rem;
-        line-height: 4.0rem;
-        letter-spacing: 0rem;
-        padding: 40px 0;  
-    }
+.hamburger {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 15px;
+    position: relative;
+    user-select: none;
+    border-radius: 5px;
+}
 
-    h2 {
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-        letter-spacing: 0rem;
-        padding: 24px 0;
-    }
 
-    a {
-        color: var(--color-text-primary);
-        text-decoration:none;
-        font-weight: var(--font-weight-medium);
-    }
-    a.btn {
-        /*Элемент приобретает свойства блочного элемента*/
-        display: block;
-        background-color: var(--color-bg-light);
-        color: var(--color-bg-section2);
-        max-width: 280px;
-        padding: 8px;
-         border: 2px solid #536614; /* Толщина, стиль, цвет */
-        border-radius: 50px; /*Скругление всех углов*/
-        text-align: center;
-        margin: 20px;
-        }
-   footer {
+/* Показываем меню при нажатии на гамбургер */
+input[type=checkbox]:checked~.menu {
+    display: inline-block;
+}
+
+/* Скрытие чекбокса */
+#toggle {
+    display: none;
+}
+
+/* Стили для пунктов меню */
+.menu {
+    background-color: #f4f4f4;
+    list-style-type: none;
+    margin-top: 50px;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #ccc;
+}
+
+.menu li {
+    margin: 0;
+    padding: 12px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu li a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1,
+h2 {
+    font-weight: var(--font-weight-regular);
+}
+
+h1 {
+    color: var(--color-text-primary);
+    font-size: 3.6rem;
+    line-height: 4.0rem;
+    letter-spacing: 0rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0rem;
+    padding: 24px 0;
+}
+
+
+
+.main-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoblock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infonlock p {
+    text-align: center;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+}
+
+a.btn {
+    /*Элемент приобретает свойства блочного элемента*/
+    display: block;
+    background-color: var(--color-bg-light);
+    color: var(--color-bg-section2);
+    min-width: 280px;
+    padding: 8px;
+    border: 2px solid #536614;
+    /* Толщина, стиль, цвет */
+    border-radius: 50px;
+    /*Скругление всех углов*/
+    text-align: center;
+    margin: 20px;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter input[type="number"] {
+
+    max-width: 30px;
+    text-align: center;
+    font-size: 2.4rem;
+    border: none;
+    margin: 0 15px;
+}
+
+
+.counter input[type="checkbox"] {
+    display: none;
+}
+
+.btn-counter {
+    padding: 10px 15px;
+    border: #4A4A4A 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.minus {
+    order: -1;
+}
+
+.plus {
+    order: 2;
+}
+
+/*Логика уменьшения и увеличения*/
+.counter input[type="number"] {
+    counter-reset: number 0;
+}
+
+.minus:checked~input[type="number"] {
+    counter-reset: number calc(counter(number) - 1);
+}
+
+.plus:checked~input[type="number"] {
+    counter-reset: number calc(counter(number) + 1);
+}
+
+.counter input[type="number"] {
+    content: counter(number);
+}
+
+footer {
     margin-top: auto;
-       }
-        .footer-navigation ul{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            list-style-type: none;
-            }
+}
+
+.footer-navigation ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
+ /*Версия для широкого экрана мобильного устройства*/
+            @media (min-width: 425px) and (max-width: 768px) {
+     
+        body {
+        font-size: 2,4rem;
+        line-height: 3,6rem;
+        }
+
+        h1 {
+        font-size: 6,3rem;
+        line-height: 6,3rem;    
+        }
+    
+        h2 {
+        font-size: 4,8rem;
+        line-height: 4,8rem;    
+        }
+        }
+    /*Версия для планшета*/
+    @media (min-width: 768px) and (max-width: 1024px) {
+
+         body {
+        font-size: 3,2rem;
+        line-height: 4,2rem;
+        }
+        h1 {
+        font-size: 8,2rem;
+        line-height: 8,2rem;    
+        }
+    
+        h2 {
+        font-size: 6,3rem;
+        line-height: 6,3rem;    
+        }
+        }
+    
+@media (min-width: 1500px) {
+    .main-flex {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .menu {
+        position: static;
+        display: inline-flex;
+        flex-direction: row;
+        margin: 0;
+        border: none;
+    }
+
+    .menu li {
+        margin: 0 20px;
+        border: none;
+    }
+
+    .navblock {
+        display: flex;
+    }
+    /*Свойства для перестроения контента*/
+    .utility-blocks {
+    display: flex;
+    }
+
+}
